@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #details {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #details h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #details p {
+            margin-bottom: 5px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Check Page</h1>
+        <label for="certificateId">Certificate ID:</label>
+        <input type="text" id="certificateId">
+        <br>
+        <button onclick="showDetails()">Check</button>
+        <br>
+        <div id="details">
+            <h2>Details:</h2>
+            <p id="certificateIdOutput"></p>
+            <p id="employeeNameOutput"></p>
+            <p id="durationOutput"></p>
+            <p id="domainOutput"></p>
+        </div>
+    </div>
+
+    <script>
+        // Simulated database
+        var database = {
+            "df458642": {
+                employeeName: "Sachin Yadav",
+                duration: "4 Weeks Internship",
+                domain: "JAVA PROGRAMMING"
+            },
+            "67890": {
+                employeeName: "Jane Smith",
+                duration: "3 months",
+                domain: "Data Science"
+            }
+        };
+
+        function showDetails() {
+            var certificateId = document.getElementById("certificateId").value;
+            var details = database[certificateId];
+
+            if (details) {
+                document.getElementById("certificateIdOutput").textContent = "Certificate ID: " + certificateId;
+                document.getElementById("employeeNameOutput").textContent = "Employee Name: " + details.employeeName;
+                document.getElementById("durationOutput").textContent = "Duration: " + details.duration;
+                document.getElementById("domainOutput").textContent = "Internship Domain: " + details.domain;
+            } else {
+                document.getElementById("certificateIdOutput").textContent = "Invalid ID";
+                document.getElementById("employeeNameOutput").textContent = "";
+                document.getElementById("durationOutput").textContent = "";
+                document.getElementById("domainOutput").textContent = "";
+            }
+
+            document.getElementById("details").style.display = "block";
+        }
+    </script>
+</body>
+</html>
