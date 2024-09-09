@@ -1,51 +1,78 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Certificate Verification</title>
+    <title>Hotel Rooms Management - Login</title>
     <style>
         body {
             background-color: #f2f2f2;
             font-family: Arial, sans-serif;
-            text-align: center;
         }
         
-        .content-box {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: 150px auto;
-            padding: 20px;
+        .container {
             max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         h1 {
+            text-align: center;
             color: #333;
         }
         
-        p {
-            color: #666;
-            font-size: 18px;
+        .form-group {
+            margin-bottom: 20px;
         }
         
-        .button {
-            background-color: #4CAF50;
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
             border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-top: 20px;
+            border-radius: 3px;
             cursor: pointer;
+        }
+        
+        .form-group button:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="content-box">
-        <img src="verified.png" alt="Verified" style="width: 100px; height: 100px;">
-        <h1>Certificate Verified</h1>
-        <p>This certificate has been successfully verified.</p>
-        <button class="button" onclick="window.open('check.html')">Check Details</button>
+    <div class="container">
+        <h1>Login</h1>
+        <h1>Login</h1>
+        
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
